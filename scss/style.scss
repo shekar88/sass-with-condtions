@@ -1,0 +1,105 @@
+//npm install -g sass
+// goto VBCode install live sass 3.0
+// goto settings search for live sass
+// Click on "Edit in settings.json"
+// modify or add below content
+/*
+    "liveSassCompile.settings.formats": [
+        {
+            //"format": "expanded",
+            "format": "compressed",
+            "extensionName": ".css",
+            // "extensionName":".min.css",
+            // "savePath": null
+            "savePath": "/css"
+        }
+    ],
+    "liveSassCompile.settings.generateMap": false,
+*/
+
+// Need to install live server (optional)
+
+@import 'config';
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: $light-color;
+    font-family: $font-stack;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+}
+
+.showcase {
+    @include set-background($primary-color);
+    //OR
+    // background-color: $primary-color;
+    // color: set-text-color($primary-color);
+    //OR
+    // color: #fff;
+    height: 600px;
+
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        ul {
+            display: flex;
+            list-style-type: none;
+
+            li {
+                padding: 15px;
+            }
+
+            a {
+                color: set-text-color($primary-color);
+            }
+
+            a:hover {
+                color: $secondary-color;
+            }
+        }
+    }
+
+    // a {
+    //     color: #fff;
+    // }
+
+    &-content {     //.showcase-content
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 30px;
+
+        img {
+            width: 50%;
+        }
+
+        h1 {
+            font-size: 50px;
+            line-height: 1.2;
+        }
+
+        // p {
+        //     margin: 20px 0;
+        // }
+    }
+}
+
+@import 'utilities';
+@import 'buttons';
+@import 'mobile';
